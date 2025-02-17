@@ -1,0 +1,33 @@
+<main>
+    <div class="selects">
+        <div class="select-category">
+            <h2>Select a filter type:</h2>
+            <select (change)="onFilterChange($event)">
+                <option value="c">Category</option>
+                <option value="a">Area</option>
+                <option value="i">Ingredient</option>
+            </select>
+        </div>
+
+        <div class="select-category">
+            <h2>Select a category of food:</h2>
+            <select (change)="onCategoryChange($event)">
+                <option *ngFor="let category of categories?.meals" [value]="getCategoryProperty(category)">
+                    {{ getCategoryProperty(category) }}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+    <!-- Lista de comidas -->
+    <section>
+        <div *ngFor="let meal of meals?.meals" class="meal-card">
+            <img [src]="meal.strMealThumb" [alt]="meal.strMeal">
+            <p>{{ meal.strMeal }}</p>
+            <p>
+                <a [routerLink]="['/meal', meal.idMeal]">Learn more</a>
+            </p>
+        </div>
+    </section>
+</main>

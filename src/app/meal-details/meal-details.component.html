@@ -1,0 +1,36 @@
+<main>
+    <div *ngFor="let meal of meal?.meals" class="main-container">
+        <div class="container-i">
+            <h1> {{ meal.strMeal }} </h1>
+
+            <p> <span class="ingredient">Instructions:</span> {{ meal.strInstructions }} </p>
+
+            <h3>Ingredients:</h3>
+            <ul>
+                <li *ngFor="let ingredient of getIngredients(meal)">
+                    <fa-icon [icon]="carrot"></fa-icon>
+                    {{ ingredient }}
+                </li>
+            </ul>
+
+            <p>Youtube video:
+                <span *ngIf="!meal.strYoutube; else youtubeLink" class="youtube-link">
+                    No YouTube video available.
+                </span>
+                <ng-template #youtubeLink>
+                    <a (click)="openYoutubeVideo(meal.strYoutube)">
+                        {{ meal.strYoutube }}
+                    </a>
+                </ng-template>
+            </p>
+        </div>
+        <img [src]="meal.strMealThumb" [alt]="meal.strMeal">
+    </div>
+
+    <div class="div-button">
+        <button [routerLink]="['/']">
+            <fa-icon [icon]="arrowLeft" class="arrow"></fa-icon>
+            go back
+        </button>
+    </div>
+</main>

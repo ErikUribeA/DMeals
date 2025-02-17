@@ -1,0 +1,113 @@
+// Variables de colores para fácil mantenimiento
+@use "sass:color"
+$bg-color: #121212
+$card-bg: #1e1e1e
+$text-color: #e0e0e0
+$secondary-text: #b3b3b3
+$primary-color: #ffcc00
+$hover-color: #ff9900
+$border-radius: 10px
+
+.main-container
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 40px
+    padding: 40px
+    background: $bg-color
+    border-radius: $border-radius
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1)
+
+.container-i
+    max-width: 600px
+    padding: 20px
+    background: $card-bg
+    border-radius: $border-radius
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1)
+
+h1
+    font-size: 2.5em
+    color: $text-color
+    margin-bottom: 10px
+
+p
+    font-size: 1.2em
+    color: $secondary-text
+    line-height: 1.5
+
+ul
+    display: grid
+    list-style: none
+    padding: 0
+    margin: 10px 0
+    gap: 10px
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+
+    li
+        background: color.adjust($card-bg, $lightness: 10%)
+        padding: 8px 12px
+        border-radius: 5px
+        margin-bottom: 5px
+        font-size: 1.1em
+        color: $text-color
+        display: flex
+        gap: 15px
+
+a
+    color: $primary-color
+    text-decoration: none
+    font-weight: bold
+    cursor: pointer
+    &:hover
+        text-decoration: underline
+        color: $hover-color
+
+img
+    max-width: 400px
+    height: auto
+    border-radius: $border-radius
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1)
+
+.youtube-link
+    color: $primary-color
+
+    &:hover
+        color: $primary-color
+
+.div-button
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 20px
+
+
+    button
+        display: flex
+        gap: 5px
+        align-items: center
+        padding: 20px
+        border: 2px solid $primary-color
+        border-radius: 20px
+        background: transparent
+        color: #fff
+        cursor: pointer
+
+        .arrow
+            color: $primary-color
+            font-size: 1.5em
+
+.ingredient
+    font-weight: bold
+    font-size: 1.17em
+    color: #fff
+
+
+@media (max-width: 768px)
+    .main-container
+        flex-direction: column
+        text-align: center
+
+    img
+        width: 100%
+        max-width: 400px
+
