@@ -4,5 +4,9 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: '**',
     renderMode: RenderMode.Prerender
+  }, 
+  {
+    path: 'meal/:id',
+    renderMode: RenderMode.Client
   }
 ];

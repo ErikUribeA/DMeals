@@ -10,7 +10,7 @@ const rootConfig: Routes = [
     {
         path: 'meal/:id',
         component: MealDetailsComponent,
-        title: 'Details Page'
+        title: 'Details Page',
     }
 ];
 
